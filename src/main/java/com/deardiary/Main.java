@@ -2,6 +2,7 @@ package com.deardiary;
 
 import java.util.concurrent.Future;
 import com.microsoft.cognitiveservices.speech.*;
+import static com.deardiary.utils.Validator.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,18 +14,18 @@ public class Main {
 
             int exitCode = 1;
             SpeechConfig config = SpeechConfig.fromSubscription(speechSubscriptionKey, serviceRegion);
-            checkConfig(config);
+            assert(checkConfig(config));
 
             SpeechRecognizer reco = new SpeechRecognizer(config);
-            checkSpeechRecog(reco);
+            assert(checkSpeechRecog(reco));
 
             System.out.println("Say something...");
 
             Future<SpeechRecognitionResult> task = reco.recognizeOnceAsync();
-            checkTask(task);
+            assert(checkTask(task));
 
             SpeechRecognitionResult result = task.get();
-            checkResult(result);
+            assert(checkResult(result));
 
             if (result.getReason() == ResultReason.RecognizedSpeech) {
                 System.out.println("We recognized: " + result.getText());
@@ -55,37 +56,7 @@ public class Main {
         }
     }
 
-    public static void checkConfig(SpeechConfig config){
-        if(config==null){
-            System.out.println("SpeechConfig object is null. Please check subscription key and region.");
-            throw new NullPointerException();
-        }
-        assert(config!=null);
-    }
 
-    public static void checkSpeechRecog(SpeechRecognizer recog){
-        if(recog==null){
-            System.out.println("SpeechRecognizer object is null.");
-            throw new NullPointerException();
-        }
-        assert(recog!=null);
-    }
-
-    public static void checkTask(Future<SpeechRecognitionResult> task){
-        if(task==null){
-            System.out.println("Future<SpeechRecognitionResult> object is null.");
-            throw new NullPointerException();
-        }
-        assert(task!=null);
-    }
-
-    public static void checkResult(SpeechRecognitionResult result){
-        if(result==null){
-            System.out.println("SpeechRecognitionResult object is null.");
-            throw new NullPointerException();
-        }
-        assert(result!=null);
-    }
 
     }
 

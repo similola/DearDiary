@@ -13,6 +13,4 @@ $ mvn clean install package
 
 $ java -cp target/* com.deardiary.Main
 
-Output:
-Hello world
 
