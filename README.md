@@ -11,7 +11,7 @@ Add subscription key and service region to Main.java
 
 $ mvn clean install package
 
-$ java -cp target/dear-diary-1.0-SNAPSHOT.jar com.deardiary.Main
+$ java -cp target/* com.deardiary.Main
 
 Output:
 Hello world
