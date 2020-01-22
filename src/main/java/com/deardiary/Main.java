@@ -7,10 +7,12 @@ import static com.deardiary.utils.Validator.*;
 public class Main {
     public static void main(String[] args) {
         try {
-            // Replace below with your own subscription key
-            String speechSubscriptionKey = "YourSubscriptionKey";
-            // Replace below with your own service region (e.g., "westus").
-            String serviceRegion = "YourServiceRegion";
+            if(args.length>2||args.length<2||args[0]==null||args[1]==null){
+                System.out.println("Run program like this: java -cp target/* com.deardiary.Main <subscriptionkey> <serviceregion>");
+                throw new Exception("Exception thrown because of incorrect arguments");
+            }
+            String speechSubscriptionKey = args[0];
+            String serviceRegion = args[1];
 
             int exitCode = 1;
             SpeechConfig config = SpeechConfig.fromSubscription(speechSubscriptionKey, serviceRegion);

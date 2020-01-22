@@ -11,6 +11,6 @@ Add subscription key and service region to Main.java
 
 $ mvn clean install package
 
-$ java -cp target/* com.deardiary.Main
+$ java -cp target/* com.deardiary.Main <key> <region>
 
 
