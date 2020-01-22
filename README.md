@@ -9,7 +9,7 @@ Add subscription key and service region to Main.java
 
 ## Build locally
 
-$ mvn clean install package
+$ mvn package
 
 $ java -cp target/* com.deardiary.Main <key> <region>
 
