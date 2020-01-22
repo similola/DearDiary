@@ -11,20 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class ValidatorTest {
-//
-//    @Test
-//    void checkConfigAssertsTrue() {
-//        SpeechConfig config = SpeechConfig.fromSubscription("testkey","testregion");
-//        assertTrue(checkConfig(config));
-//        if(checkConfig(config)){
-//            System.out.println("checkConfigAssertsTrue() passed");
-//        }
-//        else{
-//            System.out.println("checkConfigAssertsTrue() failed");
-//        }
-//
-//    }
 
+//Goal of these tests are to catch that methods will return false if the earlier object fails. This is what we want to avoid in production.
 
     @Test
     void checkConfigAssertsFalse() {
@@ -38,18 +26,6 @@ class ValidatorTest {
         }
     }
 
-//    @Test
-//    void checkSpeechRecogAssertsTrue() {
-//        SpeechConfig config = SpeechConfig.fromSubscription("testkey","testregion");
-//        SpeechRecognizer reco = new SpeechRecognizer(config);
-//        assertTrue(checkSpeechRecog(reco));
-//        if(checkSpeechRecog(reco)){
-//            System.out.println("checkSpeechRecogAssertsTrue() passed");
-//        }
-//        else{
-//            System.out.println("checkSpeechRecogAssertsTrue() failed");
-//        }
-//    }
 
     @Test
     void checkSpeechRecogAssertsFalse() {
@@ -63,20 +39,6 @@ class ValidatorTest {
         }
     }
 
-//    @Test
-//    void checkTaskAssertsTrue() {
-//        SpeechConfig config = SpeechConfig.fromSubscription("testkey","testregion");
-//        SpeechRecognizer reco = new SpeechRecognizer(config);
-//        Future<SpeechRecognitionResult> task = reco.recognizeOnceAsync();
-//        assertTrue(checkTask(task));
-//        if(checkTask(task)){
-//            System.out.println("checkTaskAssertsTrue() passed");
-//        }
-//        else{
-//            System.out.println("checkTaskAssertsTrue() failed");
-//        }
-//    }
-
     @Test
     void checkTaskAssertsFalse() {
         Future<SpeechRecognitionResult> task = null;
@@ -88,26 +50,6 @@ class ValidatorTest {
             System.out.println("checkTaskAssertsFalse() failed");
         }
     }
-
-//    @Test
-//    void checkResultAssertsTrue() {
-//        SpeechConfig config = SpeechConfig.fromSubscription("testkey", "testregion");
-//        SpeechRecognizer reco = new SpeechRecognizer(config);
-//        Future<SpeechRecognitionResult> task = reco.recognizeOnceAsync();
-//        SpeechRecognitionResult result = null;
-//        try {
-//            result = task.get();
-//            assertTrue(checkResult(result));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        if(checkResult(result)){
-//            System.out.println("checkResultAssertsTrue() passed");
-//        }
-//        else{
-//            System.out.println("checkResultAssertsTrue() failed");
-//        }
-//    }
 
     @Test
     void checkResultAssertsFalse() {
